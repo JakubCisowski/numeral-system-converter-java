@@ -1,13 +1,34 @@
 package pl.polsl.models;
 
+import pl.polsl.controllers.Converter;
+
 public class Number
 {
 	private String value;
-	private int system;
+	private int numeralSystem;
+	private double valueInDecimalSystem;
 
-	public Number(String val, int sys)
+	public Number(String value, int numeralSystem)
 	{
-		value = val;
-		system = sys;
+		this.value = value;
+		this.numeralSystem = numeralSystem;
+
+		valueInDecimalSystem = Converter.convertToDecimalValue(this);
 	}
+
+	public String getValue()
+	{
+		return value;
+	}
+
+	public int getNumeralSystem()
+	{
+		return numeralSystem;
+	}
+
+	public double getValueInDecimalSystem()
+	{
+		return valueInDecimalSystem;
+	}
+
 }

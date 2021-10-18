@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Input
 {
-	public String GetStringConsole()
+	public static String getStringConsole()
 	{
 		Scanner inputScanner = new Scanner(System.in);
 		return inputScanner.next();
