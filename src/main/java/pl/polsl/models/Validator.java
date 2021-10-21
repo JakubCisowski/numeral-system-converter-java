@@ -1,11 +1,23 @@
-package pl.polsl.controllers;
+package pl.polsl.models;
 
 import pl.polsl.models.exceptions.InvalidParameterException;
-
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Validator class, handles all user input validation in the application.
+ * @author Jakub Cisowski
+ * @version 1.0
+ */
 public class Validator
 {
+	/**
+	 * Method validating uncompressed user input algorithm parameters.
+	 *
+	 * @param numberValue  Uncompressed original number value.
+	 * @param originalSystem Uncompressed original numeral system.
+	 * @param targetSystem Uncompressed target numeral system.
+	 * @throws InvalidParameterException If input parameters are not valid.
+	 */
 	public static void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException
 	{
 		// Parameters can't be empty anyways, so no need to check that.
@@ -14,6 +26,13 @@ public class Validator
 		checkIfNumberExistsInGivenSystem(numberValue, originalSystem);
 	}
 
+	/**
+	 * Method checking whether number exists in given numeral system.
+	 *
+	 * @param numberValue  Uncompressed number value.
+	 * @param systemToCheck Uncompressed numeral system.
+	 * @throws InvalidParameterException If input parameters are not valid.
+	 */
 	private static void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException
 	{
 		int systemValue = Parser.parseStringToInt(systemToCheck);
@@ -45,6 +64,12 @@ public class Validator
 		}
 	}
 
+	/**
+	 * Method checking whether given numeral system exists.
+	 *
+	 * @param numeralSystem  Uncompressed original numeral system.
+	 * @throws InvalidParameterException If input parameters are not valid.
+	 */
 	private static void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException
 	{
 		checkIfNumeralSystemIsNumeric(numeralSystem);
@@ -57,6 +82,12 @@ public class Validator
 		}
 	}
 
+	/**
+	 * Method checking whether given numeral system contains only numeric values.
+	 *
+	 * @param numeralSystem  Uncompressed original numeral system.
+	 * @throws InvalidParameterException If input parameters are not valid.
+	 */
 	private static void checkIfNumeralSystemIsNumeric(String numeralSystem) throws InvalidParameterException
 	{
 		try

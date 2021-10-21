@@ -1,11 +1,23 @@
-package pl.polsl.controllers;
+package pl.polsl.models;
 
-import pl.polsl.models.Number;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Main algorithm class, responsible for converting numbers into any numeral systems.
+ * @author Jakub Cisowski
+ * @version 1.0
+ */
 public class Converter
 {
-	public static String convertNumeralSystem(Number originalNumber, int targetSys)
+	/**
+	 * Method taking an original number (which contains both its value and its numeral system) and converting it into the target system.
+	 * Example: originalNumber is a number with value "10", and numeral system 10, targetSystem is 2, the string "1010" is returned.
+	 *
+	 * @param originalNumber  Compressed user input (contains number value and its system).
+	 * @param targetSystem  Target numeral system of the conversion, example: 16.
+	 * @return Converted value represented in targetSystem, example: "123AB".
+	 */
+	public static String convertNumeralSystem(Number originalNumber, int targetSystem)
 	{
 		String targetValue = "";
 
@@ -18,22 +30,29 @@ public class Converter
 
 		while (currentValue != 0)
 		{
-			if (currentValue % targetSys <= 9)
+			if (currentValue % targetSystem <= 9)
 			{
-				targetValue = Parser.parseIntToString(currentValue % targetSys) + targetValue;
+				targetValue = Parser.parseIntToString(currentValue % targetSystem) + targetValue;
 			}
 			else
 			{
-				char letterFromNumber = Parser.parseIntToChar(currentValue % targetSys + 55);
+				char letterFromNumber = Parser.parseIntToChar(currentValue % targetSystem + 55);
 				targetValue = Parser.parseCharToString(letterFromNumber) + targetValue;
 			}
 
-			currentValue /= targetSys;
+			currentValue /= targetSystem;
 		}
 
 		return targetValue;
 	}
 
+	/**
+	 * Helper method taking a number (which contains both its value and its numeral system) and converting it into the decimal system.
+	 * Example: number is a number with value "1010", and numeral system 2, double value 10 is returned.
+	 *
+	 * @param number  Number to convert (contains number value and its system).
+	 * @return Converted value represented in decimal system, example: 1000.
+	 */
 	public static double convertToDecimalValue(Number number)
 	{
 		double valueInDecimal = 0;
