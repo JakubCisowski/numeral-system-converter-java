@@ -17,7 +17,7 @@ public class Converter {
 	 * @param targetSystem   Target numeral system of the conversion, example: 16.
 	 * @return Converted value represented in targetSystem, example: "123AB".
 	 */
-	public static String convertNumeralSystem(Number originalNumber, int targetSystem) {
+	public String convertNumeralSystem(Number originalNumber, int targetSystem) {
 		String targetValue = "";
 
 		// Convert value of integer part, from decimal to target system.
@@ -48,7 +48,7 @@ public class Converter {
 	 * @param number Number to convert (contains number value and its system).
 	 * @return Converted value represented in decimal system, example: 1000.
 	 */
-	public static double convertToDecimalValue(Number number) {
+	public double convertToDecimalValue(Number number) {
 		double valueInDecimal = 0;
 
 		if (number.getNumeralSystem() == 10) {

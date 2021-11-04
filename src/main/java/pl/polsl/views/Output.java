@@ -12,7 +12,7 @@ public class Output {
 	 *
 	 * @param message Message to show.
 	 */
-	public static void showStringConsole(String message)
+	public void showStringConsole(String message)
 	{
 		System.out.println(message);
 	}
@@ -22,7 +22,7 @@ public class Output {
 	 *
 	 * @param message Error message to show.
 	 */
-	public static void showErrorConsole(String message)
+	public void showErrorConsole(String message)
 	{
 		System.err.println(message);
 	}

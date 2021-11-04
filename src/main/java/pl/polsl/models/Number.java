@@ -53,7 +53,8 @@ public class Number {
 	 * @return Number's value in decimal system.
 	 */
 	public double getValueInDecimalSystem() {
-		return Converter.convertToDecimalValue(this);
+		Converter converter = new Converter();
+		return converter.convertToDecimalValue(this);
 	}
 
 }

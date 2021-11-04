@@ -21,6 +21,11 @@ public class App {
 	 * @param args 3 parameters: 1st is a number to convert, 2nd is this number's numeral system, 3rd is target numeral system of the conversion. Both numeral systems are numeric values in range 2 to 36.
 	 */
 	public static void main(String[] args) {
+		Input input = new Input();
+		Output output = new Output();
+		Converter converter = new Converter();
+		Validator validator = new Validator();
+
 		String numberValueInput;
 		String originalSystemInput;
 		String targetSystemInput;
@@ -32,28 +37,28 @@ public class App {
 			targetSystemInput = args[2];
 		}
 		else {
-			Output.showStringConsole("Invalid parameters, launching console user interface...");
-			Output.showStringConsole("___");
-			Output.showStringConsole("What number do you wish to convert:");
-			numberValueInput = Input.getStringConsole();
-			Output.showStringConsole("Select this number's numeral system (min:2, max:36):");
-			originalSystemInput = Input.getStringConsole();
-			Output.showStringConsole("Select target numeral system to convert to (min:2, max:36):");
-			targetSystemInput = Input.getStringConsole();
-			Output.showStringConsole("___");
+			output.showStringConsole("Invalid parameters, launching console user interface...");
+			output.showStringConsole("___");
+			output.showStringConsole("What number do you wish to convert:");
+			numberValueInput = input.getStringConsole();
+			output.showStringConsole("Select this number's numeral system (min:2, max:36):");
+			originalSystemInput = input.getStringConsole();
+			output.showStringConsole("Select target numeral system to convert to (min:2, max:36):");
+			targetSystemInput = input.getStringConsole();
+			output.showStringConsole("___");
 		}
 
 		// Validate user input.
 		try {
-			Validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
+			validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
 		} catch (InvalidParameterException e) {
-			Output.showErrorConsole(e.getMessage());
+			output.showErrorConsole(e.getMessage());
 			return;
 		}
 
 		// Convert numeral system and display the result.
 		Number number = new Number(numberValueInput, Integer.parseInt(originalSystemInput));
-		String result = Converter.convertNumeralSystem(number,  Integer.parseInt(targetSystemInput));
-		Output.showStringConsole(result);
+		String result = converter.convertNumeralSystem(number,  Integer.parseInt(targetSystemInput));
+		output.showStringConsole(result);
 	}
 }

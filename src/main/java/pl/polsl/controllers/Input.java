@@ -14,7 +14,7 @@ public class Input {
 	 *
 	 * @return User input string.
 	 */
-	public static String getStringConsole() {
+	public String getStringConsole() {
 		Scanner inputScanner = new Scanner(System.in);
 		return inputScanner.next();
 	}

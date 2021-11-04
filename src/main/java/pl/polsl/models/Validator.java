@@ -17,7 +17,7 @@ public class Validator {
 	 * @param targetSystem   Uncompressed target numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	public static void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
+	public void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
 		// Parameters can't be empty anyways, so no need to check that.
 		checkIfNumeralSystemExists(originalSystem);
 		checkIfNumeralSystemExists(targetSystem);
@@ -31,7 +31,7 @@ public class Validator {
 	 * @param systemToCheck Uncompressed numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException {
+	private void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException {
 		int systemValue =  Integer.parseInt(systemToCheck);
 
 		for (int i = 0; i < numberValue.length(); i++) {
@@ -62,7 +62,7 @@ public class Validator {
 	 * @param numeralSystem Uncompressed original numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException {
+	private void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException {
 		checkIfNumeralSystemIsNumeric(numeralSystem);
 
 		int systemValue = Integer.parseInt(numeralSystem);
@@ -78,7 +78,7 @@ public class Validator {
 	 * @param numeralSystem Uncompressed original numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumeralSystemIsNumeric(String numeralSystem) throws InvalidParameterException {
+	private void checkIfNumeralSystemIsNumeric(String numeralSystem) throws InvalidParameterException {
 		try {
 			Double.parseDouble(numeralSystem);
 		} catch (NumberFormatException e) {
