@@ -8,6 +8,11 @@ package pl.polsl.models;
  */
 public class InvalidParameterException extends Exception {
 
+	/**
+	 * Class constructor.
+	 *
+	 * @param message Exception message.
+	 */
 	public InvalidParameterException(String message) {
 		super(message);
 	}

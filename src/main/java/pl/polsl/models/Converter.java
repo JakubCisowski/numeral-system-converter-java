@@ -28,11 +28,11 @@ public class Converter {
 
 		while (currentValue != 0) {
 			if (currentValue % targetSystem <= 9) {
-				targetValue = String.valueOf(currentValue % targetSystem) + targetValue;
+				targetValue = currentValue % targetSystem + targetValue;
 			}
 			else {
 				char letterFromNumber = (char)(currentValue % targetSystem + 55);
-				targetValue =String.valueOf(letterFromNumber) + targetValue;
+				targetValue = letterFromNumber + targetValue;
 			}
 
 			currentValue /= targetSystem;
