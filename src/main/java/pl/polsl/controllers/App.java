@@ -1,7 +1,6 @@
 package pl.polsl.controllers;
 
 import pl.polsl.models.Converter;
-import pl.polsl.models.Parser;
 import pl.polsl.models.Validator;
 import pl.polsl.models.exceptions.InvalidParameterException;
 import pl.polsl.views.Output;
@@ -49,6 +48,7 @@ public class App {
 		try {
 			Validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
 		} catch (InvalidParameterException e) {
+			Output.showErrorConsole(e.getMessage());
 			return;
 		}
 
