@@ -1,4 +1,4 @@
-package pl.polsl.models.exceptions;
+package pl.polsl.models;
 
 /**
  * Class representing an exception thrown if algorithm parameter is invalid.

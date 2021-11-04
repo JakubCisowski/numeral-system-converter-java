@@ -1,7 +1,7 @@
 package pl.polsl.models;
 
 /**
- * Number model, represents both value and it numeral system.
+ * Number model, represents both value and its numeral system.
  *
  * @author Jakub Cisowski
  * @version 1.0

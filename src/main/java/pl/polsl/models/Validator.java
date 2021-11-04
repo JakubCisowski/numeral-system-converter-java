@@ -1,7 +1,5 @@
 package pl.polsl.models;
 
-import pl.polsl.models.exceptions.InvalidParameterException;
-
 import java.nio.charset.StandardCharsets;
 
 /**
