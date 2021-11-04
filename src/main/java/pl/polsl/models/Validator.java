@@ -34,7 +34,7 @@ public class Validator {
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
 	private static void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException {
-		int systemValue = Parser.parseStringToInt(systemToCheck);
+		int systemValue =  Integer.parseInt(systemToCheck);
 
 		for (int i = 0; i < numberValue.length(); i++) {
 			double asciiCode = numberValue.getBytes(StandardCharsets.US_ASCII)[i];
@@ -67,7 +67,7 @@ public class Validator {
 	private static void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException {
 		checkIfNumeralSystemIsNumeric(numeralSystem);
 
-		int systemValue = Parser.parseStringToInt(numeralSystem);
+		int systemValue = Integer.parseInt(numeralSystem);
 
 		if (!(systemValue >= 2 && systemValue <= 36)) {
 			throw new InvalidParameterException("'" + numeralSystem + "' isn't a valid numeral system (min:2, max:36).");

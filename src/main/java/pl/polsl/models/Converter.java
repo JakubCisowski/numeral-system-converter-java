@@ -21,18 +21,18 @@ public class Converter {
 		String targetValue = "";
 
 		// Convert value of integer part, from decimal to target system.
-		int currentValue = Parser.parseDoubleToInt(originalNumber.getValueInDecimalSystem());
+		int currentValue = (int) Math.round(originalNumber.getValueInDecimalSystem());
 		if (currentValue == 0) {
 			targetValue = "0";
 		}
 
 		while (currentValue != 0) {
 			if (currentValue % targetSystem <= 9) {
-				targetValue = Parser.parseIntToString(currentValue % targetSystem) + targetValue;
+				targetValue = String.valueOf(currentValue % targetSystem) + targetValue;
 			}
 			else {
-				char letterFromNumber = Parser.parseIntToChar(currentValue % targetSystem + 55);
-				targetValue = Parser.parseCharToString(letterFromNumber) + targetValue;
+				char letterFromNumber = (char)(currentValue % targetSystem + 55);
+				targetValue =String.valueOf(letterFromNumber) + targetValue;
 			}
 
 			currentValue /= targetSystem;
@@ -52,7 +52,7 @@ public class Converter {
 		double valueInDecimal = 0;
 
 		if (number.getNumeralSystem() == 10) {
-			valueInDecimal = Parser.parseStringToDouble(number.getValue());
+			valueInDecimal = Double.parseDouble(number.getValue());
 		}
 		else {
 			double index = 0;
@@ -76,7 +76,7 @@ public class Converter {
 					symbolValue = asciiCode - 87;
 				}
 
-				valueInDecimal += symbolValue * Math.pow(Parser.parseIntToDouble(number.getNumeralSystem()), index);
+				valueInDecimal += symbolValue * Math.pow(number.getNumeralSystem(), index);
 				index++;
 			}
 		}

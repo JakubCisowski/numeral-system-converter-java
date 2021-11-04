@@ -53,8 +53,8 @@ public class App {
 		}
 
 		// Convert numeral system and display the result.
-		Number number = new Number(numberValueInput, Parser.parseStringToInt(originalSystemInput));
-		String result = Converter.convertNumeralSystem(number, Parser.parseStringToInt(targetSystemInput));
+		Number number = new Number(numberValueInput, Integer.parseInt(originalSystemInput));
+		String result = Converter.convertNumeralSystem(number,  Integer.parseInt(targetSystemInput));
 		Output.showStringConsole(result);
 	}
 }
