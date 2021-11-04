@@ -1,25 +1,25 @@
 package pl.polsl.models;
 
 import pl.polsl.models.exceptions.InvalidParameterException;
+
 import java.nio.charset.StandardCharsets;
 
 /**
  * Validator class, handles all user input validation in the application.
+ *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class Validator
-{
+public class Validator {
 	/**
 	 * Method validating uncompressed user input algorithm parameters.
 	 *
-	 * @param numberValue  Uncompressed original number value.
+	 * @param numberValue    Uncompressed original number value.
 	 * @param originalSystem Uncompressed original numeral system.
-	 * @param targetSystem Uncompressed target numeral system.
+	 * @param targetSystem   Uncompressed target numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	public static void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException
-	{
+	public static void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
 		// Parameters can't be empty anyways, so no need to check that.
 		checkIfNumeralSystemExists(originalSystem);
 		checkIfNumeralSystemExists(targetSystem);
@@ -29,36 +29,30 @@ public class Validator
 	/**
 	 * Method checking whether number exists in given numeral system.
 	 *
-	 * @param numberValue  Uncompressed number value.
+	 * @param numberValue   Uncompressed number value.
 	 * @param systemToCheck Uncompressed numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException
-	{
+	private static void checkIfNumberExistsInGivenSystem(String numberValue, String systemToCheck) throws InvalidParameterException {
 		int systemValue = Parser.parseStringToInt(systemToCheck);
 
-		for (int i = 0; i < numberValue.length(); i++)
-		{
+		for (int i = 0; i < numberValue.length(); i++) {
 			double asciiCode = numberValue.getBytes(StandardCharsets.US_ASCII)[i];
 
 			// In case of a number
-			if (asciiCode >= 48 && asciiCode <= 57 && systemValue <= asciiCode - 48)
-			{
+			if (asciiCode >= 48 && asciiCode <= 57 && systemValue <= asciiCode - 48) {
 				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of an upper case letter
-			else if (asciiCode >= 65 && asciiCode <= 90 && systemValue <= asciiCode - 55)
-			{
+			else if (asciiCode >= 65 && asciiCode <= 90 && systemValue <= asciiCode - 55) {
 				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of a lower case letter
-			else if (asciiCode >= 97 && asciiCode <= 122 && systemValue <= asciiCode - 87)
-			{
+			else if (asciiCode >= 97 && asciiCode <= 122 && systemValue <= asciiCode - 87) {
 				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of other character
-			else if (asciiCode < 48 || (asciiCode > 57 && asciiCode < 65) || (asciiCode > 90 && asciiCode < 97) || asciiCode > 122)
-			{
+			else if (asciiCode < 48 || (asciiCode > 57 && asciiCode < 65) || (asciiCode > 90 && asciiCode < 97) || asciiCode > 122) {
 				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
 			}
 		}
@@ -67,17 +61,15 @@ public class Validator
 	/**
 	 * Method checking whether given numeral system exists.
 	 *
-	 * @param numeralSystem  Uncompressed original numeral system.
+	 * @param numeralSystem Uncompressed original numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException
-	{
+	private static void checkIfNumeralSystemExists(String numeralSystem) throws InvalidParameterException {
 		checkIfNumeralSystemIsNumeric(numeralSystem);
 
 		int systemValue = Parser.parseStringToInt(numeralSystem);
 
-		if(!(systemValue >= 2 && systemValue <= 36))
-		{
+		if (!(systemValue >= 2 && systemValue <= 36)) {
 			throw new InvalidParameterException("'" + numeralSystem + "' isn't a valid numeral system (min:2, max:36).");
 		}
 	}
@@ -85,17 +77,13 @@ public class Validator
 	/**
 	 * Method checking whether given numeral system contains only numeric values.
 	 *
-	 * @param numeralSystem  Uncompressed original numeral system.
+	 * @param numeralSystem Uncompressed original numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	private static void checkIfNumeralSystemIsNumeric(String numeralSystem) throws InvalidParameterException
-	{
-		try
-		{
+	private static void checkIfNumeralSystemIsNumeric(String numeralSystem) throws InvalidParameterException {
+		try {
 			Double.parseDouble(numeralSystem);
-		}
-		catch(NumberFormatException e)
-		{
+		} catch (NumberFormatException e) {
 			throw new InvalidParameterException("'" + numeralSystem + "' isn't a valid numeral system - invalid characters (min:2, max:36).");
 		}
 	}

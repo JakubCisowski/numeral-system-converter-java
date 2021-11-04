@@ -10,33 +10,30 @@ import pl.polsl.models.Number;
 
 /**
  * Main class of the application, as well as its entry point, containing only 'main' method.
+ *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class App
-{
+public class App {
 	/**
 	 * Main method of the application, converts a number (passed by app parameters or console input) from its original to selected target numeral system.
 	 * Example: Input: "10 10 2" converts number ("10") represented in decimal (10) numeral system into binary (2) and displays the result in console ("1010").
 	 * If passed parameters are not valid, this method launches console user interface which tries to get user input once again and displays result after successful validation.
 	 *
-	 * @param args  3 parameters: 1st is a number to convert, 2nd is this number's numeral system, 3rd is target numeral system of the conversion. Both numeral systems are numeric values in range 2 to 36.
+	 * @param args 3 parameters: 1st is a number to convert, 2nd is this number's numeral system, 3rd is target numeral system of the conversion. Both numeral systems are numeric values in range 2 to 36.
 	 */
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		String numberValueInput;
 		String originalSystemInput;
 		String targetSystemInput;
 
 		// Get user input.
-		if(args.length == 3)
-		{
+		if (args.length == 3) {
 			numberValueInput = args[0];
 			originalSystemInput = args[1];
 			targetSystemInput = args[2];
 		}
-		else
-		{
+		else {
 			Output.showStringConsole("Invalid parameters, launching console user interface...");
 			Output.showStringConsole("___");
 			Output.showStringConsole("What number do you wish to convert:");
@@ -49,12 +46,9 @@ public class App
 		}
 
 		// Validate user input.
-		try
-		{
+		try {
 			Validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
-		}
-		catch (InvalidParameterException e)
-		{
+		} catch (InvalidParameterException e) {
 			return;
 		}
 

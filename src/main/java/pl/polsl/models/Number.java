@@ -2,11 +2,11 @@ package pl.polsl.models;
 
 /**
  * Number model, represents both value and it numeral system.
+ *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class Number
-{
+public class Number {
 	/**
 	 * Number's value.
 	 */
@@ -19,11 +19,10 @@ public class Number
 	/**
 	 * Class constructor.
 	 *
-	 * @param value Number's value.
+	 * @param value         Number's value.
 	 * @param numeralSystem Number's numeral system.
 	 */
-	public Number(String value, int numeralSystem)
-	{
+	public Number(String value, int numeralSystem) {
 		this.value = value;
 		this.numeralSystem = numeralSystem;
 	}
@@ -53,8 +52,7 @@ public class Number
 	 *
 	 * @return Number's value in decimal system.
 	 */
-	public double getValueInDecimalSystem()
-	{
+	public double getValueInDecimalSystem() {
 		return Converter.convertToDecimalValue(this);
 	}
 

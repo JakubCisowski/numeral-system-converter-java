@@ -2,11 +2,11 @@ package pl.polsl.views;
 
 /**
  * Class responsible for displaying output.
+ *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class Output
-{
+public class Output {
 	/**
 	 * Method showing string to console.
 	 *
