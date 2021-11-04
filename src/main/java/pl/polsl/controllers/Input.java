@@ -1,4 +1,4 @@
-package pl.polsl.views;
+package pl.polsl.controllers;
 
 import java.util.Scanner;
 

@@ -4,7 +4,6 @@ import pl.polsl.models.Converter;
 import pl.polsl.models.Validator;
 import pl.polsl.models.exceptions.InvalidParameterException;
 import pl.polsl.views.Output;
-import pl.polsl.views.Input;
 import pl.polsl.models.Number;
 
 /**
