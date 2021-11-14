@@ -1,10 +1,9 @@
 package pl.polsl.controllers;
 
-import pl.polsl.models.Converter;
-import pl.polsl.models.Validator;
-import pl.polsl.models.InvalidParameterException;
-import pl.polsl.views.Output;
+import pl.polsl.models.*;
 import pl.polsl.models.Number;
+import pl.polsl.views.Output;
+import java.util.*;
 
 /**
  * Main class of the application, as well as its entry point, containing only 'main' method.
@@ -26,39 +25,44 @@ public class App {
 		Converter converter = new Converter();
 		Validator validator = new Validator();
 
+		List<InputSet> inputSetList = new ArrayList<>();
+		InputSet inputSet = new InputSet();
+
 		String numberValueInput;
 		String originalSystemInput;
 		String targetSystemInput;
 
 		// Get user input.
 		if (args.length == 3) {
-			numberValueInput = args[0];
-			originalSystemInput = args[1];
-			targetSystemInput = args[2];
+			inputSet.setNumberValue(args[0]);
+			inputSet.setOriginalSystem(args[1]);
+			inputSet.setTargetSystem(args[2]);
+
+			inputSetList.add(inputSet);
 		}
 		else {
 			output.showStringConsole("Invalid parameters, launching console user interface...");
 			output.showStringConsole("___");
 			output.showStringConsole("What number do you wish to convert:");
-			numberValueInput = input.getStringConsole();
+			inputSet.setNumberValue(input.getStringConsole());
 			output.showStringConsole("Select this number's numeral system (min:2, max:36):");
-			originalSystemInput = input.getStringConsole();
+			inputSet.setOriginalSystem(input.getStringConsole());
 			output.showStringConsole("Select target numeral system to convert to (min:2, max:36):");
-			targetSystemInput = input.getStringConsole();
+			inputSet.setTargetSystem(input.getStringConsole());
 			output.showStringConsole("___");
 		}
 
 		// Validate user input.
 		try {
-			validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
+			validator.validateParameters(inputSet.getNumberValue(), inputSet.getOriginalSystem(), inputSet.getTargetSystem());
 		} catch (InvalidParameterException e) {
 			output.showErrorConsole(e.getMessage());
 			return;
 		}
 
 		// Convert numeral system and display the result.
-		Number number = new Number(numberValueInput, Integer.parseInt(originalSystemInput));
-		String result = converter.convertNumeralSystem(number,  Integer.parseInt(targetSystemInput));
+		Number number = new Number(inputSet.getNumberValue(), Integer.parseInt(inputSet.getOriginalSystem()));
+		String result = converter.convertNumeralSystem(number,  Integer.parseInt(inputSet.getTargetSystem()));
 		output.showStringConsole(result);
 	}
 }
