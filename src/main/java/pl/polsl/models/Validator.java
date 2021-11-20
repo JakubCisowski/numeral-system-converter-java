@@ -18,6 +18,12 @@ public class Validator {
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
 	public void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
+
+		if (numberValue == null || originalSystem == null || targetSystem == null)
+		{
+			throw new InvalidParameterException("Null input is not allowed");
+		}
+
 		// Parameters can't be empty anyways, so no need to check that.
 		checkIfNumeralSystemExists(originalSystem);
 		checkIfNumeralSystemExists(targetSystem);

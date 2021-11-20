@@ -5,6 +5,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 import pl.polsl.models.Converter;
 import pl.polsl.models.Number;
 
+import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
 /**
  * Class containing tests of the numeral system conversion algorithm.
  * @author Jakub Cisowski
@@ -21,20 +25,20 @@ public class ConversionTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource({"15,10,2,1111", "A2,14,33,4A"})
+	@CsvSource({"15,10,2,1111", "A2,14,33,4A", "Z,36,2,100011", "11001001,2,36,5L", "AA,11,25,4K"})
 	void testNumeralSystemConversion(String originalValue, int originalSystem, int targetSystem, String expected) {
+		try{
+			number = new Number(originalValue,originalSystem);
+			String conversionResult = converter.convertNumeralSystem(number,targetSystem);
 
-	}
-
-	@ParameterizedTest
-	@CsvSource({"1111,2,15", "BC,15,177"})
-	void testConversionToDecimalSystem(String originalValue, int originalSystem, String expected) {
-
-	}
-
-	@ParameterizedTest
-	@CsvSource({"1011,2,11", "1337,9,1006"})
-	void testGettingValueInDecimalSystem(String originalValue, int originalSystem, String expected) {
-
+			if(!Objects.equals(conversionResult, expected))
+			{
+				fail("Unexpected conversion result.");
+			}
+		}
+		catch (Exception e)
+		{
+			fail("Conversion should not throw any exceptions.");
+		}
 	}
 }

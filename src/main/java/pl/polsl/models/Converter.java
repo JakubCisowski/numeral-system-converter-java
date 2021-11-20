@@ -20,8 +20,7 @@ public class Converter {
 	public String convertNumeralSystem(Number originalNumber, int targetSystem) {
 		String targetValue = "";
 
-		// Convert value of integer part, from decimal to target system.
-		int currentValue = (int) Math.round(originalNumber.getValueInDecimalSystem());
+		int currentValue = (int) Math.round(convertToDecimalValue(originalNumber));
 		if (currentValue == 0) {
 			targetValue = "0";
 		}
@@ -48,7 +47,7 @@ public class Converter {
 	 * @param number Number to convert (contains number value and its system).
 	 * @return Converted value represented in decimal system, example: 1000.
 	 */
-	public double convertToDecimalValue(Number number) {
+	private double convertToDecimalValue(Number number) {
 		double valueInDecimal = 0;
 
 		if (number.getNumeralSystem() == 10) {

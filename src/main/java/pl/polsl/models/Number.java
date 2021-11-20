@@ -47,14 +47,4 @@ public class Number {
 		return numeralSystem;
 	}
 
-	/**
-	 * Method calculating number's value in decimal system.
-	 *
-	 * @return Number's value in decimal system.
-	 */
-	public double getValueInDecimalSystem() {
-		Converter converter = new Converter();
-		return converter.convertToDecimalValue(this);
-	}
-
 }
