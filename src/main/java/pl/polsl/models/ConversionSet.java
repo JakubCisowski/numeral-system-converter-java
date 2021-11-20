@@ -1,47 +1,59 @@
 package pl.polsl.models;
 
 /**
- * Class responsible for storing user input.
+ * Class responsible for storing user input and conversion result.
  *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class InputSet {
+public class ConversionSet {
 	/**
-	 * InputSet's number value.
+	 * ConversionSet's number value.
 	 */
 	private String numberValue;
 
 	/**
-	 * InputSet's original numeral system.
+	 * ConversionSet's original numeral system.
 	 */
 	private String originalSystem;
 
 	/**
-	 * InputSet's target numeral system.
+	 * ConversionSet's target numeral system.
 	 */
 	private String targetSystem;
 
 	/**
+	 * ConversionSet's result of the conversion.
+	 */
+	private String conversionResult;
+
+	/**
 	 * Getter method for number value field.
 	 *
-	 * @return InputSet's number value.
+	 * @return ConversionSet's number value.
 	 */
 	public String getNumberValue() {return numberValue;}
 
 	/**
 	 * Getter method for original numeral system field.
 	 *
-	 * @return InputSet's original numeral system.
+	 * @return ConversionSet's original numeral system.
 	 */
 	public String getOriginalSystem() {return originalSystem;}
 
 	/**
 	 * Getter method for target numeral system field.
 	 *
-	 * @return InputSet's target numeral system.
+	 * @return ConversionSet's target numeral system.
 	 */
 	public String getTargetSystem() {return targetSystem;}
+
+	/**
+	 * Getter method for conversion result field.
+	 *
+	 * @return ConversionSet's target numeral system.
+	 */
+	public String getConversionResult() {return conversionResult;}
 
 	/**
 	 * Setter method for number value field.
@@ -63,4 +75,11 @@ public class InputSet {
 	 * @param value Target numeral system value to set to.
 	 */
 	public void setTargetSystem(String value) {targetSystem = value;}
+
+	/**
+	 * Setter method for conversion result field.
+	 *
+	 * @param value Conversion result value to set to.
+	 */
+	public void setConversionResult(String value) {conversionResult = value;}
 }

@@ -8,13 +8,14 @@ package pl.polsl.views;
  */
 public class Output {
 	/**
-	 * Method showing string to console.
+	 * Method showing multiple strings to console.
 	 *
-	 * @param message Message to show.
+	 * @param messages Messages to show.
 	 */
-	public void showStringConsole(String message)
-	{
-		System.out.println(message);
+	public void showStringConsole(String... messages) {
+		for (String message : messages) {
+			System.out.println(message);
+		}
 	}
 
 	/**
