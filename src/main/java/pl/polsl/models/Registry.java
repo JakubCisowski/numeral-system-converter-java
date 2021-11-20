@@ -4,6 +4,7 @@ import pl.polsl.views.Output;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Class responsible for keeping track of all conversions and their results.
@@ -43,17 +44,25 @@ public class Registry {
 	}
 	/**
 	 * Method for displaying collection of conversion sets to console.
+	 *
+	 * @param useStream Displaying using stream.
 	 * */
-	public void showRegistry()
-	{
+	public void showRegistry(boolean useStream) {
 		Output output = new Output();
 
 		output.showStringConsole("REGISTRY RECORDS:", "---");
 
-		for (ConversionSet set : setCollection)
-		{
-			output.showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")");
+		if(!useStream){
+			for (ConversionSet set : setCollection) {
+				output.showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")");
+			}
 		}
+		else{
+			Stream<ConversionSet> stream;
+			stream = setCollection.stream();
+			stream.forEach(set -> output.showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")"));
+		}
+
 	}
 
 }

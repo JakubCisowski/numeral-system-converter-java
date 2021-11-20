@@ -19,8 +19,7 @@ public class Validator {
 	 */
 	public void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
 
-		if (numberValue == null || originalSystem == null || targetSystem == null)
-		{
+		if (numberValue == null || originalSystem == null || targetSystem == null) {
 			throw new InvalidParameterException("Null input is not allowed");
 		}
 

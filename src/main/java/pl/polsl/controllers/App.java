@@ -71,11 +71,10 @@ public class App {
 			// Ask user for next action.
 			output.showStringConsole("Exit - '1', Show registry and exit - '2', Continue converting - any input.");
 			String choice = input.getStringConsole();
-			if(Objects.equals(choice, "1"))
-			{
+			if(Objects.equals(choice, "1")) {
 				userWantsToExit = true;
 			} else if(Objects.equals(choice, "2")){
-				registry.showRegistry();
+				registry.showRegistry(false);
 				userWantsToExit = true;
 			}
 

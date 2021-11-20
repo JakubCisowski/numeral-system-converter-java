@@ -46,13 +46,11 @@ public class ConversionTest {
 			number = new Number(originalValue,originalSystem);
 			String conversionResult = converter.convertNumeralSystem(number,targetSystem);
 
-			if(!Objects.equals(conversionResult, expected))
-			{
+			if(!Objects.equals(conversionResult, expected)) {
 				fail("Unexpected conversion result.");
 			}
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			fail("Conversion should not throw any exceptions.");
 		}
 	}
