@@ -25,7 +25,6 @@ public class App {
 		Input input = new Input();
 		Output output = new Output();
 		Converter converter = new Converter();
-		Validator validator = new Validator();
 
 		String numberValueInput;
 		String originalSystemInput;
@@ -52,18 +51,15 @@ public class App {
 				output.showStringConsole("___");
 			}
 
-			// Validate user input.
-			try {
-				validator.validateParameters(numberValueInput, originalSystemInput, targetSystemInput);
+
+			// Validate input and convert numeral system, then display the result.
+			try{
+				conversionResult = converter.convertNumeralSystem(numberValueInput, originalSystemInput, targetSystemInput);
+				output.showStringConsole(conversionResult);
 			} catch (InvalidParameterException e) {
 				output.showErrorConsole(e.getMessage());
 				return;
 			}
-
-			// Convert numeral system and display the result.
-			Number number = new Number(numberValueInput, Integer.parseInt(originalSystemInput));
-			conversionResult = converter.convertNumeralSystem(number,  Integer.parseInt(targetSystemInput));
-			output.showStringConsole(conversionResult);
 
 			// Add input and output to registry.
 			registry.addConversionSet(numberValueInput,originalSystemInput,targetSystemInput,conversionResult);

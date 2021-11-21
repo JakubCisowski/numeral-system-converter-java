@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class Validator {
+class Validator {
 	/**
 	 * Method validating uncompressed user input algorithm parameters.
 	 *
@@ -17,7 +17,7 @@ public class Validator {
 	 * @param targetSystem   Uncompressed target numeral system.
 	 * @throws InvalidParameterException If input parameters are not valid.
 	 */
-	public void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
+	void validateParameters(String numberValue, String originalSystem, String targetSystem) throws InvalidParameterException {
 
 		if (numberValue == null || originalSystem == null || targetSystem == null) {
 			throw new InvalidParameterException("Null input is not allowed");

@@ -1,5 +1,7 @@
 package pl.polsl.models;
 
+import pl.polsl.views.Output;
+
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -13,11 +15,18 @@ public class Converter {
 	 * Method taking an original number (which contains both its value and its numeral system) and converting it into the target system.
 	 * Example: originalNumber is a number with value "10", and numeral system 10, targetSystem is 2, the string "1010" is returned.
 	 *
-	 * @param originalNumber Compressed user input (contains number value and its system).
-	 * @param targetSystem   Target numeral system of the conversion, example: 16.
+	 * @param numberValue Uncompressed number value.
+	 * @param originalSys Uncompressed original numeral system - before converting.
+	 * @param targetSys   Uncompressed target numeral system of the conversion, example: 16.
+	 * @throws InvalidParameterException If input parameters are not valid.
 	 * @return Converted value represented in targetSystem, example: "123AB".
 	 */
-	public String convertNumeralSystem(Number originalNumber, int targetSystem) {
+	public String convertNumeralSystem(String numberValue, String originalSys, String targetSys) throws InvalidParameterException{
+		Validator validator = new Validator();
+		validator.validateParameters(numberValue, originalSys, targetSys);
+
+		Number originalNumber = new Number(numberValue, Integer.parseInt(originalSys));
+		int targetSystem = Integer.parseInt(targetSys);
 		String targetValue = "";
 
 		int currentValue = (int) Math.round(convertToDecimalValue(originalNumber));
