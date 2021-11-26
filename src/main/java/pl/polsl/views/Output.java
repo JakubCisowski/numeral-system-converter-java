@@ -35,6 +35,7 @@ public class Output {
 	/**
 	 * Method for displaying registry to console.
 	 *
+	 * @param registrySet Registry data.
 	 * @param useStream Displaying using stream.
 	 * */
 	public void showRegistry(List<ConversionSet> registrySet, boolean useStream) {
