@@ -1,11 +1,10 @@
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import pl.polsl.models.Converter;
 import pl.polsl.models.InvalidParameterException;
-import pl.polsl.models.Number;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Objects;
 
@@ -40,13 +39,13 @@ public class ConversionTest {
 	void testNumeralSystemConversion(String originalValue, String originalSystem, String targetSystem, String expected) {
 		try{
 			String conversionResult = converter.convertNumeralSystem(originalValue,originalSystem,targetSystem);
-
-			if(!Objects.equals(conversionResult, expected)) {
-				fail("Unexpected conversion result.");
-			}
+			assertEquals(expected, conversionResult);
 		}
-		catch (Exception e) {
-			fail("Conversion should not throw any exceptions.");
+		catch (InvalidParameterException e) {
+			fail("Valid conversion parameters should not throw InvalidParameterException.");
+		}
+		catch (NullPointerException e) {
+			fail("Valid conversion parameters should not throw NullPointerException.");
 		}
 	}
 
@@ -62,34 +61,6 @@ public class ConversionTest {
 		}
 		catch (InvalidParameterException e) {
 			return;
-		}
-	}
-
-	/**
-	 * Test that checks if validation throws InvalidParameterException when validating null input.
-	 */
-	@Test
-	void nullDataThrowsInvalidParameterException() {
-		try{
-			converter.convertNumeralSystem(null, null, null);
-			fail("Validating NULL input data did not throw InvalidParameterException.");
-		}
-		catch (InvalidParameterException e) {
-			return;
-		}
-	}
-
-	/**
-	 * Parametrized test, checks if validation doesn't throw InvalidParameterException when validating valid input.
-	 */
-	@ParameterizedTest
-	@CsvSource({"15,10,2", "435,35,2", "A,11,36", "Z,36,2"})
-	void validDataDoesNotThrowAnyException(String inputNumberValue, String inputOriginalSystem, String inputTargetSystem) {
-		try{
-			converter.convertNumeralSystem(inputNumberValue, inputOriginalSystem, inputTargetSystem);
-		}
-		catch (InvalidParameterException e) {
-			fail("Validating VALID input data threw InvalidParameterException.");
 		}
 	}
 }
