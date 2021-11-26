@@ -1,5 +1,9 @@
 package pl.polsl.views;
 
+import pl.polsl.models.ConversionSet;
+import java.util.List;
+import java.util.stream.Stream;
+
 /**
  * Class responsible for displaying output.
  *
@@ -26,6 +30,26 @@ public class Output {
 	public void showErrorConsole(String message)
 	{
 		System.err.println(message);
+	}
+
+	/**
+	 * Method for displaying registry to console.
+	 *
+	 * @param useStream Displaying using stream.
+	 * */
+	public void showRegistry(List<ConversionSet> registrySet, boolean useStream) {
+		showStringConsole("REGISTRY RECORDS:", "---");
+
+		if(!useStream){
+			for (ConversionSet set : registrySet) {
+				showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")");
+			}
+		}
+		else{
+			Stream<ConversionSet> stream = registrySet.stream();
+			stream.forEach(set -> showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")"));
+		}
+
 	}
 }
 

@@ -1,7 +1,5 @@
 package pl.polsl.models;
 
-import pl.polsl.views.Output;
-
 import java.nio.charset.StandardCharsets;
 
 /**

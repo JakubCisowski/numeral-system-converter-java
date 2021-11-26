@@ -1,7 +1,6 @@
 package pl.polsl.controllers;
 
 import pl.polsl.models.*;
-import pl.polsl.models.Number;
 import pl.polsl.views.Output;
 import java.util.*;
 
@@ -70,7 +69,7 @@ public class App {
 			if(Objects.equals(choice, "1")) {
 				userWantsToExit = true;
 			} else if(Objects.equals(choice, "2")){
-				registry.showRegistry(false);
+				output.showRegistry(registry.getRegistry(),true);
 				userWantsToExit = true;
 			}
 
