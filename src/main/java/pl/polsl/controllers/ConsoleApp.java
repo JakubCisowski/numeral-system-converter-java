@@ -1,16 +1,17 @@
 package pl.polsl.controllers;
 
 import pl.polsl.models.*;
-import pl.polsl.views.Output;
+import pl.polsl.views.ConsoleView;
+
 import java.util.*;
 
 /**
- * Main class of the application, as well as its entry point, containing only 'main' method.
+ * Main class of the console application, as well as its entry point, containing only 'main' method.
  *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class App {
+public class ConsoleApp {
 	/**
 	 * Main method of the application, converts a number (passed by app parameters or console input) from its original to selected target numeral system.
 	 * Example: Input: "10 10 2" converts number ("10") represented in decimal (10) numeral system into binary (2) and displays the result in console ("1010").
@@ -21,8 +22,8 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		Registry registry = new Registry();
-		Input input = new Input();
-		Output output = new Output();
+		ConsoleInput consoleInput = new ConsoleInput();
+		ConsoleView consoleView = new ConsoleView();
 		Converter converter = new Converter();
 
 		String numberValueInput;
@@ -40,23 +41,23 @@ public class App {
 				targetSystemInput = args[2];
 			}
 			else {
-				output.showStringConsole("___");
-				output.showStringConsole("What number do you wish to convert:");
-				numberValueInput = input.getStringConsole();
-				output.showStringConsole("Select this number's numeral system (min:2, max:36):");
-				originalSystemInput = input.getStringConsole();
-				output.showStringConsole("Select target numeral system to convert to (min:2, max:36):");
-				targetSystemInput = input.getStringConsole();
-				output.showStringConsole("___");
+				consoleView.showString("___");
+				consoleView.showString("What number do you wish to convert:");
+				numberValueInput = consoleInput.getString();
+				consoleView.showString("Select this number's numeral system (min:2, max:36):");
+				originalSystemInput = consoleInput.getString();
+				consoleView.showString("Select target numeral system to convert to (min:2, max:36):");
+				targetSystemInput = consoleInput.getString();
+				consoleView.showString("___");
 			}
 
 
 			// Validate input and convert numeral system, then display the result.
 			try{
 				conversionResult = converter.convertNumeralSystem(numberValueInput, originalSystemInput, targetSystemInput);
-				output.showStringConsole(conversionResult);
+				consoleView.showString(conversionResult);
 			} catch (InvalidParameterException e) {
-				output.showErrorConsole(e.getMessage());
+				consoleView.showError(e.getMessage());
 				return;
 			}
 
@@ -64,17 +65,17 @@ public class App {
 			registry.addConversionSet(numberValueInput,originalSystemInput,targetSystemInput,conversionResult);
 
 			// Ask user for next action.
-			output.showStringConsole("Exit - '1', Show registry and exit - '2', Continue converting - any input.");
-			String choice = input.getStringConsole();
+			consoleView.showString("Exit - '1', Show registry and exit - '2', Continue converting - any input.");
+			String choice = consoleInput.getString();
 			if(Objects.equals(choice, "1")) {
 				userWantsToExit = true;
 			} else if(Objects.equals(choice, "2")){
-				output.showRegistry(registry.getRegistry(),true);
+				consoleView.showRegistry(registry.getRegistry(),true);
 				userWantsToExit = true;
 			}
 
 		} while(!userWantsToExit);
 
-		output.showStringConsole("---");
+		consoleView.showString("---");
 	}
 }

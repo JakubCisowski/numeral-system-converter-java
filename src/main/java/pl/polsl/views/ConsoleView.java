@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Class responsible for displaying output.
+ * Class responsible for displaying output to console.
  *
  * @author Jakub Cisowski
  * @version 1.0
  */
-public class Output {
+public class ConsoleView {
 	/**
 	 * Method showing multiple strings to console.
 	 *
 	 * @param messages Messages to show.
 	 */
-	public void showStringConsole(String... messages) {
+	public void showString(String... messages) {
 		for (String message : messages) {
 			System.out.println(message);
 		}
@@ -27,7 +27,7 @@ public class Output {
 	 *
 	 * @param message Error message to show.
 	 */
-	public void showErrorConsole(String message)
+	public void showError(String message)
 	{
 		System.err.println(message);
 	}
@@ -39,16 +39,16 @@ public class Output {
 	 * @param useStream Displaying using stream.
 	 * */
 	public void showRegistry(List<ConversionSet> registrySet, boolean useStream) {
-		showStringConsole("REGISTRY RECORDS:", "---");
+		showString("REGISTRY RECORDS:", "---");
 
 		if(!useStream){
 			for (ConversionSet set : registrySet) {
-				showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")");
+				showString(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")");
 			}
 		}
 		else{
 			Stream<ConversionSet> stream = registrySet.stream();
-			stream.forEach(set -> showStringConsole(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")"));
+			stream.forEach(set -> showString(set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")"));
 		}
 
 	}

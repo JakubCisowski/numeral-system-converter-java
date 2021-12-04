@@ -67,8 +67,8 @@ loadScripts(document, 'script');</script>
 </ul>
 <ul class="navListSearch">
 <li><label for="search">SEARCH:</label>
-<input type="text" id="search" value="search" disabled="disabled">
-<input type="reset" id="reset" value="reset" disabled="disabled">
+<consoleInput type="text" id="search" value="search" disabled="disabled">
+<consoleInput type="reset" id="reset" value="reset" disabled="disabled">
 </li>
 </ul>
 <div>
@@ -124,7 +124,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>pl.polsl.controllers.App</li>
+<li>pl.polsl.controllers.ConsoleApp</li>
 </ul>
 </li>
 </ul>
@@ -180,7 +180,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
 <td class="colLast">
-<div class="block">Main method of the application, converts a number (passed by app parameters or console input) from its original to selected target numeral system.</div>
+<div class="block">Main method of the application, converts a number (passed by app parameters or console consoleInput) from its original to selected target numeral system.</div>
 </td>
 </tr>
 </table>
@@ -233,10 +233,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>main</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
-<div class="block">Main method of the application, converts a number (passed by app parameters or console input) from its original to selected target numeral system.
+<div class="block">Main method of the application, converts a number (passed by app parameters or console consoleInput) from its original to selected target numeral system.
  Example: Input: "10 10 2" converts number ("10") represented in decimal (10) numeral system into binary (2) and displays the result in console ("1010").
- If passed parameters are not valid, this method launches console user interface which tries to get user input once again and displays result after successful validation.
- User can infinitely convert numbers. Conversion sets (input+output) is stored in registry which can be displayed after every conversion.</div>
+ If passed parameters are not valid, this method launches console user interface which tries to get user consoleInput once again and displays result after successful validation.
+ User can infinitely convert numbers. Conversion sets (consoleInput+consoleView) is stored in registry which can be displayed after every conversion.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - 3 parameters: 1st is a number to convert, 2nd is this number's numeral system, 3rd is target numeral system of the conversion. Both numeral systems are numeric values in range 2 to 36.</dd>
