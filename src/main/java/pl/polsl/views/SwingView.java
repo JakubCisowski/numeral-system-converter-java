@@ -1,6 +1,5 @@
 package pl.polsl.views;
 
-import pl.polsl.controllers.SwingApp;
 import pl.polsl.models.ConversionSet;
 import pl.polsl.models.Converter;
 import pl.polsl.models.InvalidParameterException;
@@ -11,17 +10,21 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Main view class of the Swing GUI application, responsible for creating and displaying GUI.
+ *
+ * @author Jakub Cisowski
+ * @version 1.0
+ */
 public class SwingView extends JPanel
 		implements ActionListener {
 
-	protected JButton buttonConvert, buttonShowRegistry;
-	protected JTextField originalSystemTextField, targetSystemTextField, numberValueTextField;
-	protected JLabel originalSystemLabel, targetSystemLabel, numberValueLabel;
-	protected Registry registry;
+	private JTextField originalSystemTextField, targetSystemTextField, numberValueTextField;
+	private Registry registry;
 
 	public SwingView() {
-		// Vertical .CENTER .BOTTOM
-		// Horizontal .LEADING .CENTER .TRAILING
+		JButton buttonConvert, buttonShowRegistry;
+		JLabel originalSystemLabel, targetSystemLabel, numberValueLabel;
 
 		registry = new Registry();
 
