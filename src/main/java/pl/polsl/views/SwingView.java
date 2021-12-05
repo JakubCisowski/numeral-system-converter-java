@@ -19,20 +19,6 @@ public class SwingView extends JPanel
 	protected JLabel originalSystemLabel, targetSystemLabel, numberValueLabel;
 	protected Registry registry;
 
-	public void createAndShowGUI() {
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		JFrame frame = new JFrame("Converter");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		SwingView newContentPane = new SwingView();
-		newContentPane.setLayout(new GridLayout(4,2));
-		newContentPane.setOpaque(true);
-
-		frame.setContentPane(newContentPane);
-		frame.pack();
-		frame.setVisible(true);
-	}
-
 	public SwingView() {
 		// Vertical .CENTER .BOTTOM
 		// Horizontal .LEADING .CENTER .TRAILING
@@ -70,6 +56,20 @@ public class SwingView extends JPanel
 		add(buttonShowRegistry,7);
 	}
 
+	public void createAndShowGUI() {
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame frame = new JFrame("Converter");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		SwingView newContentPane = new SwingView();
+		newContentPane.setLayout(new GridLayout(4,2));
+		newContentPane.setOpaque(true);
+
+		frame.setContentPane(newContentPane);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
 	public void actionPerformed(ActionEvent e) {
 
 		if ("convert".equals(e.getActionCommand())) {
@@ -93,4 +93,20 @@ public class SwingView extends JPanel
 			JOptionPane.showMessageDialog(this, registryString, "Registry", JOptionPane.PLAIN_MESSAGE);
 		}
 	}
+
+//	public String getNumberValueText(){
+//		return numberValueTextField.getText();
+//	}
+//
+//	public String getOriginalSystemText(){
+//		return originalSystemTextField.getText();
+//	}
+//
+//	public String getTargetSystemText(){
+//		return targetSystemTextField.getText();
+//	}
+//
+//	public void showDialog(String message, String title, int iconType){
+//		JOptionPane.showMessageDialog(this, message, title, iconType);
+//	}
 }
