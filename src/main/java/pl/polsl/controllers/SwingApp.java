@@ -1,11 +1,6 @@
 package pl.polsl.controllers;
 import pl.polsl.views.SwingView;
 
-//todo: Czy przenieść actionPerformed, a jeśli tak to co z .addActionListener() i .getText()?
-//todo: Skomentować resztę w SingView/SwingApp
-//todo: Wygenerować javadoc
-//todo: Wrzucić na platformę
-
 /**
  * Main class of the Swing GUI application, as well as its entry point, containing only 'main' method.
  *
