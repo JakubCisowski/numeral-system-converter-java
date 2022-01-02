@@ -19,9 +19,35 @@ import java.awt.event.ActionListener;
 public class SwingView extends JPanel
 		implements ActionListener {
 
-	private JTextField originalSystemTextField, targetSystemTextField, numberValueTextField;
+	/**
+	 * Main frame of the GUI application.
+	 */
+	private JFrame mainFrame;
+
+	/**
+	 * Original system text field.
+	 */
+	private JTextField originalSystemTextField;
+
+	/**
+	 * Target system text field.
+	 */
+	private JTextField targetSystemTextField;
+
+	/**
+	 * Number value text field.
+	 */
+	private JTextField numberValueTextField;
+
+	/**
+	 * Conversion registry.
+	 */
 	private Registry registry;
 
+
+	/**
+	 * Class constructor responsible for setting controls placement and properties.
+	 */
 	public SwingView() {
 		JButton buttonConvert, buttonShowRegistry;
 		JLabel originalSystemLabel, targetSystemLabel, numberValueLabel;
@@ -59,6 +85,9 @@ public class SwingView extends JPanel
 		add(buttonShowRegistry,7);
 	}
 
+	/**
+	 * Method responsible for creating and showing graphical user interface.
+	 */
 	public void createAndShowGUI() {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("Converter");
@@ -71,12 +100,17 @@ public class SwingView extends JPanel
 		frame.setContentPane(newContentPane);
 		frame.pack();
 		frame.setVisible(true);
+
+		mainFrame = frame;
 	}
 
+	/**
+	 * Method responsible for handling button click events.
+	 *
+	 * @param e Event triggered by action such as button click.
+	 */
 	public void actionPerformed(ActionEvent e) {
-
 		if ("convert".equals(e.getActionCommand())) {
-
 			try{
 				Converter converter = new Converter();
 				String conversionResult = converter.convertNumeralSystem(numberValueTextField.getText(), originalSystemTextField.getText(), targetSystemTextField.getText());
@@ -85,31 +119,8 @@ public class SwingView extends JPanel
 			} catch (InvalidParameterException ex) {
 				JOptionPane.showMessageDialog(this, ex.getMessage(), "Conversion error", JOptionPane.ERROR_MESSAGE);
 			}
-
 		} else if("showRegistry".equals(e.getActionCommand())) {
-			String registryString = "REGISTRY RECORDS:\n";
-
-			for (ConversionSet set : registry.getRegistry()) {
-				registryString += set.getNumberValue() + "(" + set.getOriginalSystem() + ") = " + set.getConversionResult() + "(" + set.getTargetSystem() + ")\n";
-			}
-
-			JOptionPane.showMessageDialog(this, registryString, "Registry", JOptionPane.PLAIN_MESSAGE);
+			SwingRegistryTableDialog d = new SwingRegistryTableDialog(mainFrame, registry);
 		}
 	}
-
-//	public String getNumberValueText(){
-//		return numberValueTextField.getText();
-//	}
-//
-//	public String getOriginalSystemText(){
-//		return originalSystemTextField.getText();
-//	}
-//
-//	public String getTargetSystemText(){
-//		return targetSystemTextField.getText();
-//	}
-//
-//	public void showDialog(String message, String title, int iconType){
-//		JOptionPane.showMessageDialog(this, message, title, iconType);
-//	}
 }
