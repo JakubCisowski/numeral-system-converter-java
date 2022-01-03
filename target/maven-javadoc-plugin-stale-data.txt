@@ -1,0 +1,81 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/Wistful/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/microprofile/3.0/microprofile-3.0.pom;C:/Users/Wistful/.m2/repository/javax/enterprise/cdi-api/2.0/cdi-api-2.0.jar;C:/Users/Wistful/.m2/repository/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar;C:/Users/Wistful/.m2/repository/javax/interceptor/javax.interceptor-api/1.2/javax.interceptor-api-1.2.jar;C:/Users/Wistful/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar;C:/Users/Wistful/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar;C:/Users/Wistful/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar;C:/Users/Wistful/.m2/repository/javax/json/javax.json-api/1.1/javax.json-api-1.1.jar;C:/Users/Wistful/.m2/repository/javax/annotation/javax.annotation-api/1.3/javax.annotation-api-1.3.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/config/microprofile-config-api/1.3/microprofile-config-api-1.3.jar;C:/Users/Wistful/.m2/repository/org/osgi/org.osgi.annotation.versioning/1.0.0/org.osgi.annotation.versioning-1.0.0.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/fault-tolerance/microprofile-fault-tolerance-api/2.0/microprofile-fault-tolerance-api-2.0.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/health/microprofile-health-api/2.0/microprofile-health-api-2.0.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/metrics/microprofile-metrics-api/2.0.0/microprofile-metrics-api-2.0.0.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/jwt/microprofile-jwt-auth-api/1.1/microprofile-jwt-auth-api-1.1.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/openapi/microprofile-openapi-api/1.1/microprofile-openapi-api-1.1.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/rest/client/microprofile-rest-client-api/1.3/microprofile-rest-client-api-1.3.jar;C:/Users/Wistful/.m2/repository/org/eclipse/microprofile/opentracing/microprofile-opentracing-api/1.3/microprofile-opentracing-api-1.3.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'NumeralSystemConverter 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'NumeralSystemConverter 1.0-SNAPSHOT API'
+pl.polsl.models
+pl.polsl.servlets
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/ConversionSet.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/Converter.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/InvalidParameterException.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/Number.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/package-info.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/Registry.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/models/Validator.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/servlets/AppServlet.java'
+'C:/Programowanie/_studia/JAVA/NumeralSystemConverter/src/main/java/pl/polsl/servlets/package-info.java'
+C:\Users\Wistful\.m2\repository\jakarta\platform\jakarta.jakartaee-api\8.0.0\jakarta.jakartaee-api-8.0.0.jar = 1641133777944
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\microprofile\3.0\microprofile-3.0.pom = 1641133770080
+C:\Users\Wistful\.m2\repository\javax\enterprise\cdi-api\2.0\cdi-api-2.0.jar = 1641133777801
+C:\Users\Wistful\.m2\repository\javax\el\javax.el-api\3.0.0\javax.el-api-3.0.0.jar = 1641133777702
+C:\Users\Wistful\.m2\repository\javax\interceptor\javax.interceptor-api\1.2\javax.interceptor-api-1.2.jar = 1641133777742
+C:\Users\Wistful\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar = 1638618385910
+C:\Users\Wistful\.m2\repository\javax\ws\rs\javax.ws.rs-api\2.1\javax.ws.rs-api-2.1.jar = 1641133777797
+C:\Users\Wistful\.m2\repository\javax\json\bind\javax.json.bind-api\1.0\javax.json.bind-api-1.0.jar = 1641133777844
+C:\Users\Wistful\.m2\repository\javax\json\javax.json-api\1.1\javax.json-api-1.1.jar = 1641133777884
+C:\Users\Wistful\.m2\repository\javax\annotation\javax.annotation-api\1.3\javax.annotation-api-1.3.jar = 1641133777944
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\config\microprofile-config-api\1.3\microprofile-config-api-1.3.jar = 1641133777971
+C:\Users\Wistful\.m2\repository\org\osgi\org.osgi.annotation.versioning\1.0.0\org.osgi.annotation.versioning-1.0.0.jar = 1641133778520
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\fault-tolerance\microprofile-fault-tolerance-api\2.0\microprofile-fault-tolerance-api-2.0.jar = 1641133778083
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\health\microprofile-health-api\2.0\microprofile-health-api-2.0.jar = 1641133778141
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\metrics\microprofile-metrics-api\2.0.0\microprofile-metrics-api-2.0.0.jar = 1641133778237
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\jwt\microprofile-jwt-auth-api\1.1\microprofile-jwt-auth-api-1.1.jar = 1641133778276
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\openapi\microprofile-openapi-api\1.1\microprofile-openapi-api-1.1.jar = 1641133778358
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\rest\client\microprofile-rest-client-api\1.3\microprofile-rest-client-api-1.3.jar = 1641133778449
+C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\opentracing\microprofile-opentracing-api\1.3\microprofile-opentracing-api-1.3.jar = 1641133778479
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\src\main\java = 1634559500479
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\allclasses-index.html = 1641194143065
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\allclasses.html = 1641194143075
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\allpackages-index.html = 1641194143068
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\constant-values.html = 1641194142975
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\deprecated-list.html = 1641194143072
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\element-list = 1641194142944
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\help-doc.html = 1641194143090
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\index-all.html = 1641194143060
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\index.html = 1641194143082
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\member-search-index.js = 1641194143056
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\member-search-index.zip = 1641194143058
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\overview-summary.html = 1641194143085
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\overview-tree.html = 1641194143020
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\package-search-index.js = 1641194143044
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\package-search-index.zip = 1641194143050
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\script.js = 1641194143099
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\search.js = 1641194143102
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\serialized-form.html = 1641194142985
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\stylesheet.css = 1641194143096
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\type-search-index.js = 1641194143052
+C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\site\apidocs\type-search-index.zip = 1641194143054

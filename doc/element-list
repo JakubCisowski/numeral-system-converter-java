@@ -1,4 +1,2 @@
-unnamed package
-pl.polsl.controllers
 pl.polsl.models
-pl.polsl.views
+pl.polsl.servlets

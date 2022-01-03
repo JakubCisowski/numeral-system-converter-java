@@ -10,22 +10,21 @@ import pl.polsl.models.InvalidParameterException;
 import pl.polsl.models.Registry;
 
 /**
- * Main class of the servlet that demonstrates parameter download given during
- * servlet initialization
+ * Main class of the web application servlet, that handles the main form.
  *
- * @author Gall Anonim
+ * @author Jakub Cisowski
  * @version 1.0
  */
 @WebServlet("/Form")
 public class AppServlet extends HttpServlet {
 
     /**
-     * Collection of statistics
+     * Conversion registry
      */
-   private final Registry registry;
+   private Registry registry;
 
     /**
-     * Constructor initiating statistics collection
+     * Constructor 
      */
     public AppServlet() {
         registry = new Registry();
@@ -44,16 +43,11 @@ public class AppServlet extends HttpServlet {
             throws IOException, ServletException {
         response.setContentType("text/html; charset=ISO-8859-2");
         PrintWriter out = response.getWriter();
-
-        // Get parameter values - firstName i lastName
-        //String firstName = request.getParameter("firstname");
-        //String lastName = request.getParameter("lastname");
         
         String numberValueInput = request.getParameter("numberValue");
         String originalSystemInput = request.getParameter("originalSystem");
 	String targetSystemInput = request.getParameter("targetSystem");
 
-        // FirstName or lastName was not given - send error message
         if (numberValueInput.length() == 0 || originalSystemInput.length() == 0 || targetSystemInput.length() == 0) {
             response.sendError(response.SC_BAD_REQUEST, "Input can't be empty!");
         } else {
