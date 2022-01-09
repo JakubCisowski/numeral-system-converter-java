@@ -15,21 +15,21 @@ import pl.polsl.models.Registry;
  * @author Jakub Cisowski
  * @version 1.0
  */
-@WebServlet("/Form")
-public class AppServlet extends HttpServlet {
-
-    /**
-     * Conversion registry
+@WebServlet("/Conversion")
+public class ConversionServlet extends HttpServlet {
+     /**
+     * Converter
      */
-   private Registry registry;
+    //private final static Converter converter = new Converter();
 
+   
     /**
      * Constructor 
+    public ConversionServlet() {
+         converter = new Converter();
+     }
      */
-    public AppServlet() {
-        registry = new Registry();
-    }
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -49,14 +49,14 @@ public class AppServlet extends HttpServlet {
 	String targetSystemInput = request.getParameter("targetSystem");
 
         if (numberValueInput.length() == 0 || originalSystemInput.length() == 0 || targetSystemInput.length() == 0) {
-            response.sendError(response.SC_BAD_REQUEST, "Input can't be empty!");
+            response.sendError(response.SC_BAD_REQUEST, "Input can not be empty!");
         } else {
-            Converter converter = new Converter();
             String output = "";
+            Converter converter = new Converter();
             
             try{
                     String conversionResult = converter.convertNumeralSystem(numberValueInput, originalSystemInput, targetSystemInput);
-                    registry.addConversionSet(numberValueInput,originalSystemInput,targetSystemInput,conversionResult);
+                    // RegistryServlet.registry.addConversionSet(numberValueInput,originalSystemInput,targetSystemInput,conversionResult);
                     output = conversionResult;
             } catch (InvalidParameterException e) {
                     response.sendError(response.SC_BAD_REQUEST, e.getMessage());
@@ -77,15 +77,6 @@ public class AppServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        response.setContentType("text/plain; charset=ISO-8859-2");
-        PrintWriter out = response.getWriter();
-
-        out.println("Passed parameters:");
-
-        Enumeration enumeration = request.getParameterNames();
-        while (enumeration.hasMoreElements()) {
-            String name = (String) enumeration.nextElement();
-            out.println(name + " = " + request.getParameter(name));
-        }
+        doGet(request, response);
     }
 }

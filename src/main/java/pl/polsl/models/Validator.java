@@ -44,19 +44,19 @@ class Validator {
 
 			// In case of a number
 			if (asciiCode >= 48 && asciiCode <= 57 && systemValue <= asciiCode - 48) {
-				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
+				throw new InvalidParameterException(numberValue + " is not a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of an upper case letter
 			else if (asciiCode >= 65 && asciiCode <= 90 && systemValue <= asciiCode - 55) {
-				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
+				throw new InvalidParameterException(numberValue + " is not a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of a lower case letter
 			else if (asciiCode >= 97 && asciiCode <= 122 && systemValue <= asciiCode - 87) {
-				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
+				throw new InvalidParameterException(numberValue + " is not a valid value in numeral system - " + systemToCheck);
 			}
 			// In case of other character
 			else if (asciiCode < 48 || (asciiCode > 57 && asciiCode < 65) || (asciiCode > 90 && asciiCode < 97) || asciiCode > 122) {
-				throw new InvalidParameterException("'" + numberValue + "' isn't a valid value in numeral system - " + systemToCheck);
+				throw new InvalidParameterException(numberValue + " is not a valid value in numeral system - " + systemToCheck);
 			}
 		}
 	}
@@ -73,7 +73,7 @@ class Validator {
 		int systemValue = Integer.parseInt(numeralSystem);
 
 		if (!(systemValue >= 2 && systemValue <= 36)) {
-			throw new InvalidParameterException("'" + numeralSystem + "' isn't a valid numeral system (min:2, max:36).");
+			throw new InvalidParameterException(numeralSystem + " is not a valid numeral system - min:2, max:36.");
 		}
 	}
 
@@ -87,7 +87,7 @@ class Validator {
 		try {
 			Double.parseDouble(numeralSystem);
 		} catch (NumberFormatException e) {
-			throw new InvalidParameterException("'" + numeralSystem + "' isn't a valid numeral system - invalid characters (min:2, max:36).");
+			throw new InvalidParameterException(numeralSystem + " is not a valid numeral system - invalid characters - min:2, max:36.");
 		}
 	}
 }

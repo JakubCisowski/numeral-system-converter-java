@@ -1,15 +1,6 @@
 pl\polsl\models\Converter.class
-pl\polsl\listeners\SimpleServletListener.class
-pl\polsl\controllers\ConsoleInput.class
-pl\polsl\models\InvalidParameterException.class
 pl\polsl\models\Registry.class
 pl\polsl\models\Validator.class
-pl\polsl\controllers\SwingApp$1.class
-pl\polsl\views\ConsoleView.class
 pl\polsl\models\Number.class
-pl\polsl\servlets\AppServlet.class
-pl\polsl\filters\SecondsFilter.class
 pl\polsl\models\ConversionSet.class
-pl\polsl\controllers\ConsoleApp.class
-pl\polsl\controllers\SwingApp.class
-pl\polsl\views\SwingView.class
+pl\polsl\models\InvalidParameterException.class

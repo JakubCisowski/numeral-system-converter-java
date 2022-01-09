@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ConversionTest" time="0.13" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ConversionTest" time="0.118" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="netbeans.deploy" value="true"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
@@ -10,6 +11,7 @@
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
+    <property name="exec.appArgs" value=""/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="user.timezone" value="Europe/Belgrade"/>
     <property name="java.vm.specification.version" value="11"/>
@@ -17,8 +19,9 @@
     <property name="user.country" value="PL"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11\bin"/>
-    <property name="sun.java.command" value="C:\Users\Wistful\AppData\Local\Temp\surefire10492932726030843420\surefirebooter1233138719314653219.jar C:\Users\Wistful\AppData\Local\Temp\surefire10492932726030843420 2022-01-02T18-59-22_788-jvmRun1 surefire17144951235814305883tmp surefire_010623722463305335728tmp"/>
+    <property name="sun.java.command" value="C:\Users\Wistful\AppData\Local\Temp\surefire8761456798933640418\surefirebooter11424057341837242563.jar C:\Users\Wistful\AppData\Local\Temp\surefire8761456798933640418 2022-01-09T12-28-42_050-jvmRun1 surefire10000572309395112177tmp surefire_017808142864253250449tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="exec.vmArgs" value=""/>
     <property name="surefire.test.class.path" value="C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\test-classes;C:\Programowanie\_studia\JAVA\NumeralSystemConverter\target\classes;C:\Users\Wistful\.m2\repository\jakarta\platform\jakarta.jakartaee-api\8.0.0\jakarta.jakartaee-api-8.0.0.jar;C:\Users\Wistful\.m2\repository\javax\enterprise\cdi-api\2.0\cdi-api-2.0.jar;C:\Users\Wistful\.m2\repository\javax\el\javax.el-api\3.0.0\javax.el-api-3.0.0.jar;C:\Users\Wistful\.m2\repository\javax\interceptor\javax.interceptor-api\1.2\javax.interceptor-api-1.2.jar;C:\Users\Wistful\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Wistful\.m2\repository\javax\ws\rs\javax.ws.rs-api\2.1\javax.ws.rs-api-2.1.jar;C:\Users\Wistful\.m2\repository\javax\json\bind\javax.json.bind-api\1.0\javax.json.bind-api-1.0.jar;C:\Users\Wistful\.m2\repository\javax\json\javax.json-api\1.1\javax.json-api-1.1.jar;C:\Users\Wistful\.m2\repository\javax\annotation\javax.annotation-api\1.3\javax.annotation-api-1.3.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\config\microprofile-config-api\1.3\microprofile-config-api-1.3.jar;C:\Users\Wistful\.m2\repository\org\osgi\org.osgi.annotation.versioning\1.0.0\org.osgi.annotation.versioning-1.0.0.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\fault-tolerance\microprofile-fault-tolerance-api\2.0\microprofile-fault-tolerance-api-2.0.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\health\microprofile-health-api\2.0\microprofile-health-api-2.0.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\metrics\microprofile-metrics-api\2.0.0\microprofile-metrics-api-2.0.0.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\jwt\microprofile-jwt-auth-api\1.1\microprofile-jwt-auth-api-1.1.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\openapi\microprofile-openapi-api\1.1\microprofile-openapi-api-1.1.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\rest\client\microprofile-rest-client-api\1.3\microprofile-rest-client-api-1.3.jar;C:\Users\Wistful\.m2\repository\org\eclipse\microprofile\opentracing\microprofile-opentracing-api\1.3\microprofile-opentracing-api-1.3.jar;C:\Users\Wistful\.m2\repository\org\junit\jupiter\junit-jupiter\5.5.0\junit-jupiter-5.5.0.jar;C:\Users\Wistful\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.0\junit-jupiter-api-5.5.0.jar;C:\Users\Wistful\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Wistful\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Wistful\.m2\repository\org\junit\platform\junit-platform-commons\1.5.0\junit-platform-commons-1.5.0.jar;C:\Users\Wistful\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.0\junit-jupiter-params-5.5.0.jar;C:\Users\Wistful\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.0\junit-jupiter-engine-5.5.0.jar;C:\Users\Wistful\.m2\repository\org\junit\platform\junit-platform-engine\1.5.0\junit-platform-engine-1.5.0.jar;C:\Users\Wistful\.m2\repository\org\mockito\mockito-core\3.1.0\mockito-core-3.1.0.jar;C:\Users\Wistful\.m2\repository\net\bytebuddy\byte-buddy\1.9.10\byte-buddy-1.9.10.jar;C:\Users\Wistful\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.10\byte-buddy-agent-1.9.10.jar;C:\Users\Wistful\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Wistful"/>
@@ -33,7 +36,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Wistful\AppData\Local\Temp\surefire10492932726030843420\surefirebooter1233138719314653219.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Wistful\AppData\Local\Temp\surefire8761456798933640418\surefirebooter11424057341837242563.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11+28"/>
@@ -61,18 +64,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testNumeralSystemConversion{String, String, String, String}[1]" classname="ConversionTest" time="0.052"/>
+  <testcase name="testNumeralSystemConversion{String, String, String, String}[1]" classname="ConversionTest" time="0.048"/>
   <testcase name="testNumeralSystemConversion{String, String, String, String}[2]" classname="ConversionTest" time="0.001"/>
   <testcase name="testNumeralSystemConversion{String, String, String, String}[3]" classname="ConversionTest" time="0.001"/>
-  <testcase name="testNumeralSystemConversion{String, String, String, String}[4]" classname="ConversionTest" time="0.001"/>
+  <testcase name="testNumeralSystemConversion{String, String, String, String}[4]" classname="ConversionTest" time="0"/>
   <testcase name="testNumeralSystemConversion{String, String, String, String}[5]" classname="ConversionTest" time="0.001"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[1]" classname="ConversionTest" time="0.008"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[2]" classname="ConversionTest" time="0.003"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[3]" classname="ConversionTest" time="0.001"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[4]" classname="ConversionTest" time="0.001"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[5]" classname="ConversionTest" time="0"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[6]" classname="ConversionTest" time="0"/>
-  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[7]" classname="ConversionTest" time="0.001"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[1]" classname="ConversionTest" time="0.007"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[2]" classname="ConversionTest" time="0.001"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[3]" classname="ConversionTest" time="0"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[4]" classname="ConversionTest" time="0"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[5]" classname="ConversionTest" time="0.001"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[6]" classname="ConversionTest" time="0.001"/>
+  <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[7]" classname="ConversionTest" time="0"/>
   <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[8]" classname="ConversionTest" time="0.001"/>
   <testcase name="invalidDataThrowsInvalidParameterException{String, String, String}[9]" classname="ConversionTest" time="0"/>
 </testsuite>

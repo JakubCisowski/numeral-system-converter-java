@@ -6,11 +6,16 @@
     <body>
         <h1>Numeral System Converter</h1>
         
-        <form action="Form" method="GET">
-            <p>Number value:<input type=text size=20 name=numberValue></p>
-            <p>Number system:<input type=text size=20 name=originalSystem></p>
-            <p>Target system:<input type=text size=20 name=targetSystem></p>
+        <form action="Conversion" method="GET">
+            <p>Number value: <input type=text size=20 name=numberValue></p>
+            <p>Number system: <input type=text size=20 name=originalSystem></p>
+            <p>Target system: <input type=text size=20 name=targetSystem></p>
             <input type="submit" value="Convert!" />
         </form>
+        <hr>
+        <form action="Registry" method="GET">
+            <input type="submit" value="Show registry" />
+        </form>
+        <hr>
     </body>
 </html>
