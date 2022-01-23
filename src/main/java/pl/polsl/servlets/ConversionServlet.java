@@ -6,8 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import pl.polsl.models.Converter;
+import java.time.LocalDateTime;
 import pl.polsl.models.InvalidParameterException;
 import pl.polsl.models.Registry;
+import pl.polsl.controllers.DatabaseController;
+import pl.polsl.entities.DateEntry;
+import pl.polsl.entities.RegistryEntry;
 
 /**
  * Main class of the web application servlet, that handles the main form.
@@ -20,7 +24,12 @@ public class ConversionServlet extends HttpServlet {
      /**
      * Converter
      */
-    //private final static Converter converter = new Converter();
+    private final Converter converter = new Converter();
+    
+      /**
+     * Database
+     */
+    private final DatabaseController databaseController = new DatabaseController();
 
    
     /**
@@ -52,12 +61,17 @@ public class ConversionServlet extends HttpServlet {
             response.sendError(response.SC_BAD_REQUEST, "Input can not be empty!");
         } else {
             String output = "";
-            Converter converter = new Converter();
             
             try{
                     String conversionResult = converter.convertNumeralSystem(numberValueInput, originalSystemInput, targetSystemInput);
                     // RegistryServlet.registry.addConversionSet(numberValueInput,originalSystemInput,targetSystemInput,conversionResult);
                     output = conversionResult;
+                    
+                     // Add to database
+                    DateEntry dateEntry = new DateEntry(LocalDateTime.now());
+                    RegistryEntry registryEntry = new RegistryEntry(numberValueInput, originalSystemInput, output, targetSystemInput, dateEntry);
+
+                    databaseController.persistObject(registryEntry);
             } catch (InvalidParameterException e) {
                     response.sendError(response.SC_BAD_REQUEST, e.getMessage());
             }
