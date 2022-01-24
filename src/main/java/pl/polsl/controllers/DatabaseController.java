@@ -15,7 +15,7 @@ public class DatabaseController {
     private final EntityManagerFactory entityManagerFactory;
 
     public DatabaseController() {
-        entityManagerFactory = Persistence.createEntityManagerFactory("TextCompressionProd");
+        entityManagerFactory = Persistence.createEntityManagerFactory("NumeralSystemConverterProd");
     }
 
     public void persistObject(Object object) {
@@ -59,10 +59,16 @@ public class DatabaseController {
         em.getTransaction().begin();
 
         try {
-            String newResult = newObject.getResult();
+            String newInputNumber = newObject.getInputNumber();
+            String newInputSystem = newObject.getInputSystem();
+            String newOutputNumber = newObject.getOutputNumber();
+            String newOutputSystem = newObject.getOutputSystem();
             long objId = newObject.getId();
 
-            Query query = em.createQuery("UPDATE RegistryEntry h SET h.result = ?1 WHERE h.id = ?2");
+            Query query = em.createQuery("UPDATE RegistryEntry h SET h.inputnumber = ?1 WHERE h.id = ?2");
+            Query query2 = em.createQuery("UPDATE RegistryEntry h SET h.inputsystem = ?1 WHERE h.id = ?2");
+            Query query3 = em.createQuery("UPDATE RegistryEntry h SET h.outputnumber = ?1 WHERE h.id = ?2");
+            Query query4 = em.createQuery("UPDATE RegistryEntry h SET h.outputsystem = ?1 WHERE h.id = ?2");
         }
         catch (PersistenceException ex) {
             ex.printStackTrace();
